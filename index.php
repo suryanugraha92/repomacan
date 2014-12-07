@@ -1,3 +1,5 @@
+<?php include "helper.php" ?>
+
 <html>
 <head>
 	<title>Repo Macan</title>
@@ -6,6 +8,7 @@
 </head>
 
 <body>
+	<?php echo getFile() ?>
 	<div class="container">
 		<form action="">
 			<div class="form-group">
