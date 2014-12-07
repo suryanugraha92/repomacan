@@ -1,5 +1,5 @@
 <?php include "helper.php" ?>
-
+<?php $cron = getCron() ?>
 <html>
 <head>
 	<title>Repo Macan</title>
@@ -8,20 +8,12 @@
 </head>
 
 <body>
-	<?php echo getFile() ?>
 	<div class="container">
 		<form action="">
 			<div class="form-group">
 				<label class="control-label" for="days">Hari</label>
 				<select name="days" id="days" class="form-control">
-					<option value="*">Semua hari</option>
-					<option value="1">Senin</option>
-					<option value="2">Selasa</option>
-					<option value="3">Rabu</option>
-					<option value="4">Kamis</option>
-					<option value="5">Jum'at</option>
-					<option value="6">Sabtu</option>
-					<option value="7">Minggu</option>
+					<?php echo getListDay($cron['week']) ?>
 				</select>
 			</div>
 
@@ -29,7 +21,7 @@
 				<label class="control-label" for="hours">Jam</label>
 				<select name="hours" id="hours" class="form-control">
 					<?php for ($i=0; $i<=23; $i++): ?>
-					<option value="<?php echo $i ?>"><?php echo $i ?></option>
+					<option value="<?php echo $i ?>" <?php if($cron['hour']==$i) echo "selected"; ?>><?php echo $i ?></option>
 					<?php endfor ?>
 				</select>
 			</div>
