@@ -9,7 +9,7 @@
 
 <body>
 	<div class="container">
-		<form action="submit.php">
+		<form action="submit.php" method="post">
 			<div class="form-group">
 				<label class="control-label" for="week">Hari</label>
 				<select name="week" id="week" class="form-control">
