@@ -1,5 +1,8 @@
 <?php include "helper.php" ?>
-<?php $cron = getCron() ?>
+<?php
+$cron = getCron();
+$release = getRelease();
+?>
 <html>
 <head>
 	<title>Repo Macan</title>
@@ -28,7 +31,7 @@
 
 			<div class="form-group">
 				<label class="control-label" for="release">Rilis Kode</label>
-				<input type="text" name="release" id="release" class="form-control" value="">
+				<input type="text" name="release" id="release" class="form-control" value="<?php echo $release ?>">
 			</div>
 
 			<div class="form-group">

@@ -12,8 +12,6 @@ function getFile($filename = '')
 
 function getCron()
 {
-	$cron = getFile("/sedot/pkgs/ubuntu-debmirror/cron");
-	$pecah = explode(" ", $cron);
 
 	$result = array();
 	$result['minute'] = $pecah[0];
@@ -24,6 +22,8 @@ function getCron()
 
 	return $result;
 }
+	$cron = getFile("/sedot/pkgs/ubuntu-debmirror/cron");
+	$pecah = explode(" ", $cron);
 
 function getListDay($selected = '')
 {
@@ -47,6 +47,13 @@ function writeCron($hour, $week)
 	$data = '0 '.$hour.' * * '.$week;
 	fwrite($fp, $data);
 	fclose($fp);
+}
+
+function getRelease()
+{
+	$release = getFile("/sedot/pkgs/ubuntu-debmirror/debmirror.dist");
+	
+	return $realease;
 }
 
 ?>
