@@ -9,17 +9,17 @@
 
 <body>
 	<div class="container">
-		<form action="">
+		<form action="submit.php">
 			<div class="form-group">
-				<label class="control-label" for="days">Hari</label>
-				<select name="days" id="days" class="form-control">
+				<label class="control-label" for="week">Hari</label>
+				<select name="week" id="week" class="form-control">
 					<?php echo getListDay($cron['week']) ?>
 				</select>
 			</div>
 
 			<div class="form-group">
-				<label class="control-label" for="hours">Jam</label>
-				<select name="hours" id="hours" class="form-control">
+				<label class="control-label" for="hour">Jam</label>
+				<select name="hour" id="hour" class="form-control">
 					<?php for ($i=0; $i<=23; $i++): ?>
 					<option value="<?php echo $i ?>" <?php if($cron['hour']==$i) echo "selected"; ?>><?php echo $i ?></option>
 					<?php endfor ?>
@@ -27,8 +27,8 @@
 			</div>
 
 			<div class="form-group">
-				<label class="control-label" for="hours">Rilis Kode</label>
-				<input type="text" name="release" class="form-control" value="">
+				<label class="control-label" for="release">Rilis Kode</label>
+				<input type="text" name="release" id="release" class="form-control" value="">
 			</div>
 
 			<div class="form-group">

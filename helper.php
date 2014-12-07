@@ -40,4 +40,13 @@ function getListDay($selected = '')
 	return $result;
 }
 
+function writeCron($hour, $week)
+{
+	$fp = fopen('/sedot/pkgs/ubuntu-debmirror/cron', 'w');
+
+	$data = '0 $hour * * $week';
+	fwrite($fp, $data);
+	fclose($fp);
+}
+
 ?>
