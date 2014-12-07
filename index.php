@@ -1,5 +1,7 @@
-<?php include "helper.php" ?>
 <?php
+include 'login.check.php';
+include "helper.php";
+
 $cron = getCron();
 $release = getRelease();
 ?>
