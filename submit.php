@@ -1,5 +1,5 @@
 <?php 
-include 'helper.php'
+include 'helper.php';
 
 $hour = $_POST['hour'];
 $week = $_POST['week'];
